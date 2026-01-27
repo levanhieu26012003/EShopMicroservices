@@ -11,7 +11,7 @@ public class GetProductEndpoint : ICarterModule
             {
                 var command = request.Adapt<CreateProductCommand>();
 
-                var result = await sender.Send(command);
+                var result = await sender.Send(command); //trước khi maping thì validate tự động nhờ DI tại program
 
                 var response = result.Adapt<CreateProductResponse>();
 

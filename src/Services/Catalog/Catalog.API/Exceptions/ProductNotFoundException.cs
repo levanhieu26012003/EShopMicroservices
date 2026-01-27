@@ -1,6 +1,8 @@
-﻿namespace Catalog.API.Exceptions;
+﻿using BuildingBlocks.Exceptions;
 
-public class ProductNotFoundException : Exception // kế thừa nhằm nhận đầy đủ thuôc tính của 1 Exception
+namespace Catalog.API.Exceptions;
+
+public class ProductNotFoundException : NotFoundException // kế thừa nhằm nhận đầy đủ thuôc tính của 1 Exception
 {
-    public ProductNotFoundException() : base("Product not found!") { } // truyền giá trị cho constructer của lớp cha
+    public ProductNotFoundException(Guid Id) : base("Product", Id) { } // truyền giá trị cho constructer của lớp cha
 }
