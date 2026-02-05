@@ -7,12 +7,12 @@ namespace Ordering.Domain.Models
     {
         public string Name { get; private set; } = default!;
         public decimal Price { get; private set; } = default!;
-        public Product Create(string name, decimal price)
+        public static Product Create(ProductId id,string name, decimal price)
         {
             ArgumentException.ThrowIfNullOrWhiteSpace(name);
             ArgumentOutOfRangeException.ThrowIfNegativeOrZero(price);
 
-            var product = new Product { Name = name, Price = price };
+            var product = new Product {Id = id, Name = name, Price = price };
 
             return product;
         }
