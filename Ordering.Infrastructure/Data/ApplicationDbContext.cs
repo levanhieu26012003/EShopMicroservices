@@ -1,9 +1,10 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Ordering.Application.Data;
 using Ordering.Domain.Models;
 
 namespace Ordering.Infrastructure.Data;
-public class ApplicationDbContext : DbContext
+public class ApplicationDbContext : DbContext, IApplicationDbContext
 {
     // nhận cấu hình từ Program như Provider, Connection string, Logg, Interceptor
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
@@ -13,8 +14,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<Order> Orders => Set<Order>(); // đại diện cho 1 table trong database
     public DbSet<Customer> Customers => Set<Customer>();
     public DbSet<OrderItem> OrderItems => Set<OrderItem>();
-    public DbSet<Product> Prodcuts => Set<Product>();
-    
+    public DbSet<Product> Products => Set<Product>();
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         // quét toàn bộ các Configuration Entity (constrain, relationship, key) để đăng kí

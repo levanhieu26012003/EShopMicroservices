@@ -9,7 +9,7 @@ public abstract class Aggregate<TId>
     {
         _domainEvents.Add(domainEvent);
     }
-    public IDomainEvent[] ClearDomainEvent()
+    public IDomainEvent[] ClearDomainEvents()
     {
         IDomainEvent[] dequeedEvents = _domainEvents.ToArray();
         _domainEvents.Clear();

@@ -32,7 +32,7 @@ public static class DatabaseExtendsion
 
     private static async Task SeedProductAsync(ApplicationDbContext context)
     {
-        if (!await context.Prodcuts.AnyAsync())
+        if (!await context.Products.AnyAsync())
         {
             await context.AddRangeAsync(InitialData.Products);
             await context.SaveChangesAsync();

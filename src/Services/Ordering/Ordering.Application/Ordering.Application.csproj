@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.23" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\..\Ordering.Domain\Ordering.Domain.csproj" />
     <ProjectReference Include="..\..\..\BuidingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
   </ItemGroup>
