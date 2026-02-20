@@ -6,12 +6,13 @@ using Ordering.Infrastructure.Data.Extendsions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services
-    .AddApplicationServices(builder.Configuration)
+    .AddApplicationServices()
     .AddInfrastructureServices(builder.Configuration)
     .AddApiServices(builder.Configuration);
 
 
 var app = builder.Build();
+app.useApiServices();
 
 if (app.Environment.IsDevelopment())
 {

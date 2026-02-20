@@ -19,7 +19,7 @@ builder.Services.AddMarten(opts =>
 }).UseLightweightSessions(); //có nhiều phiên bản những lightweight là best practces
 if (builder.Environment.IsDevelopment())
     builder.Services.InitializeMartenWith<CatalogInitialData>();    
-builder.Services.AddExceptionHandler<CustomerExceptionHandler>();
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddHealthChecks()
     .AddNpgSql(builder.Configuration.GetConnectionString("Database")!);
 

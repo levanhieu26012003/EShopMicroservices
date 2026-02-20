@@ -1,3 +1,6 @@
 ﻿
 global using Microsoft.EntityFrameworkCore;
-global using Ordering.Infrastructure.Data;
+global using Carter;
+global using Mapster;
+global using MediatR;
+global using Ordering.Application.Dtos;

@@ -23,7 +23,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 builder.Services.AddScoped<IBasketRepository, BasketRepository>();
 builder.Services.Decorate<IBasketRepository, CacheBasketRepository>();// vào CacheBasketRepository trước khi vào các instance implement của IBasketRepository
 
-builder.Services.AddExceptionHandler<CustomerExceptionHandler>();
+builder.Services.AddExceptionHandler<CustomExceptionHandler>();
 builder.Services.AddCarter();
 builder.Services.AddHealthChecks().
     AddNpgSql(builder.Configuration.GetConnectionString("Database")!)

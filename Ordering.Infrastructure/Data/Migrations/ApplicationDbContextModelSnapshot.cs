@@ -275,7 +275,7 @@ namespace Ordering.Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Prodcuts");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Ordering.Domain.Models.Order", b =>
